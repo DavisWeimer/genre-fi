@@ -1,0 +1,5 @@
+.square-image {
+  width: 100%; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  object-fit: cover; /* This will make the image cover the entire area */
+}

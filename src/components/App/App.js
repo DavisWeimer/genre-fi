@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, InputGroup, FormControl, Row, Button, Card } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { CLIENT_SECRET, CLIENT_ID } from './client.js';
+import { CLIENT_SECRET, CLIENT_ID } from '../../client.js';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -51,10 +51,10 @@ function App() {
     await fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist&market=US', searchParameters)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         setSearchedArtists(data.artists.items)
       })
-
-    console.log(searchedArtists)
+      
   }
 
   return (
@@ -77,14 +77,19 @@ function App() {
         </InputGroup>
       </Container>
       <Container>
-        <Row className='mx-2 row row-cols-4'>
-        <Card>
-          <Card.Img src='#'/>
-          <Card.Body>
-            <Card.Title>Artist Name</Card.Title>
-          </Card.Body>
-        </Card>
-        </Row>
+      <Row className='mx-2 row row-cols-4'>
+        {searchedArtists
+          .filter(artist => artist.images && artist.images.length > 0) // Filter out artists without images
+          .map((artist, i) => (
+            <Card key={i}>
+              <Card.Img src={artist.images[0].url} alt={artist.name} className="square-image" />
+              <Card.Body>
+                <Card.Title>{artist.name}</Card.Title>
+              </Card.Body>
+            </Card>
+          ))
+        }
+      </Row>
       </Container>
     </div>
   );
