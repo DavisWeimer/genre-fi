@@ -23,7 +23,7 @@ function App() {
           new_artists={newArtists}
         />
       </Container>
-      <Container></Container>
+      <Container>
         <ArtistCard 
           searched_artists={searchedArtists}
         />
