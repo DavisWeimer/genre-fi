@@ -2,9 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, InputGroup, FormControl, Row, Button, Card } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-
-const CLIENT_ID = "f9f7deb8bdf8441dba12e2a4ec486c69";
-const CLIENT_SECRET = "021df35debc149bea24c895f7de19f7f";
+import { CLIENT_SECRET, CLIENT_ID } from './client.js';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
