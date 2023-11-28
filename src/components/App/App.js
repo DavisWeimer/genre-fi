@@ -21,11 +21,12 @@ function App() {
         <SearchBar 
           access_token={accessToken} 
           new_artists={newArtists}
-        />
+          />
       </Container>
       <Container>
         <ArtistCard 
           searched_artists={searchedArtists}
+          access_token={accessToken} 
         />
       </Container>
     </div>

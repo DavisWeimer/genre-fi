@@ -23,7 +23,6 @@ function SearchBar({ access_token, new_artists }) {
         console.log(data)
         new_artists(data.artists.items)
       })
-      
   }
 
   const [searchInput, setSearchInput] = useState("");
@@ -31,7 +30,7 @@ function SearchBar({ access_token, new_artists }) {
   return (
     <InputGroup className='mb-3' size='lg'>
       <FormControl 
-        placeholder={searchInput ? searchInput : 'Search For Artist'}
+        placeholder='Search For Artist'
         type='input'
         onKeyDown={event => {
           if (event.key === 'Enter') {

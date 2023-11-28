@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { CLIENT_SECRET, CLIENT_ID } from '../client.js';
+const clientId = process.env.REACT_APP_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 function useSpotifyToken() {
   const [accessToken, setAccessToken] = useState("");
@@ -8,11 +9,14 @@ function useSpotifyToken() {
     var authOptions = {
       method: 'POST',
       headers: {
-        'Authorization': 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
+        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: 'grant_type=client_credentials'
     };
+    console.log(authOptions)
+    console.log(clientId)
+    console.log(clientSecret)
 
     fetch('https://accounts.spotify.com/api/token', authOptions)
       .then(result => {
