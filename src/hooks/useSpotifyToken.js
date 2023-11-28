@@ -14,10 +14,7 @@ function useSpotifyToken() {
       },
       body: 'grant_type=client_credentials'
     };
-    console.log(authOptions)
-    console.log(clientId)
-    console.log(clientSecret)
-
+    
     fetch('https://accounts.spotify.com/api/token', authOptions)
       .then(result => {
         if (!result.ok) {
