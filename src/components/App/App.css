@@ -4,9 +4,6 @@
   object-fit: cover; /* This will make the image cover the entire area */
 }
 
-.artist-card {
-  width: 75%; /* Adjust the width as needed */
-  height: 200px; /* Fixed height to maintain square shape */
-  overflow: hidden; /* Hide overflowed content */
+.ArtistCard {
+  align-items: center;
 }
-

@@ -23,7 +23,7 @@ import { useEffect, useState } from 'react';
 
 function ArtistCard({ searched_artists, access_token }) {
   return (
-    <Row className='row row-cols-4'>
+    <Row className='row row-cols-1 row-cols-md-4 justify-content-center centered-row'>
     {searched_artists
       .filter(artist => artist.images && artist.genres.length > 0 && artist.images.length > 0) // Filter out artists without images
       .map((artist, i) => (
