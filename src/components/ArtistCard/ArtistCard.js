@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Carousel, ButtonGroup, DropdownButton, Dropdown } from 'react-bootstrap';
 
 function ArtistCard({ searched_artists, access_token }) {
-  // Utility function to chunk an array into groups
   const chunk = (arr, chunkSize) => {
     let result = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
@@ -11,7 +10,6 @@ function ArtistCard({ searched_artists, access_token }) {
     return result;
   };
 
-  // Preprocess artists and chunk them into groups of 6
   const processedArtists = searched_artists
     .filter(artist => artist.images && artist.genres.length > 0 && artist.images.length > 0);
   const artistChunks = chunk(processedArtists, 6);
@@ -32,8 +30,8 @@ function ArtistCard({ searched_artists, access_token }) {
                 width: 'calc(33.333% - 2rem)', 
                 margin: '1rem', 
                 boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-                background: 'linear-gradient(0deg, #585858ff 0%, #ffffffff 100%)', // Gradient background
-                color: 'white' // Adjusted text color for better contrast
+                background: 'linear-gradient(0deg, #585858ff 0%, #ffffffff 100%)',
+                color: 'white'
               }}>
                 <Card.Img variant="top" src={artist.images[0].url} alt={artist.name} style={{ height: '200px', objectFit: 'cover' }} />
                 <Card.Body>
