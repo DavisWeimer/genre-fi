@@ -28,7 +28,7 @@ function SearchBar({ access_token, new_artists }) {
   const [searchInput, setSearchInput] = useState("");
 
   return (
-    <InputGroup className='mb-3' size='lg'>
+    <InputGroup style={{ margin: 'auto', padding: '1rem' }} size='lg'>
       <FormControl 
         placeholder='Search For Artist'
         type='input'
@@ -39,7 +39,7 @@ function SearchBar({ access_token, new_artists }) {
         }}
         onChange={event => setSearchInput(event.target.value)}
       />
-      <Button onClick={search} >
+      <Button onClick={search}variant="dark">
         Search
       </Button>
     </InputGroup>

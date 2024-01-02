@@ -1,9 +1,12 @@
-.square-image {
-  width: 100%; /* Adjust the width as needed */
-  height: 200px; /* Adjust the height as needed */
-  object-fit: cover; /* This will make the image cover the entire area */
-}
 
-.ArtistCard {
+.App {
+  background-image: url('../../assets/uuunion.svg');
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: repeat;
+  background-size: cover;
+  text-align: center;
 }
